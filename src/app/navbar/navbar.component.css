@@ -1,0 +1,17 @@
+.navbar-inverse {
+  	background-color: #2196F3;
+  	border-color: transparent;
+}
+
+.navbar-inverse a {
+  	color: #2B1B17;
+  	font-weight: bold;
+}
+
+.navbar-brand {
+	padding: 0px 0px;
+}
+
+.capitalize-username {
+	text-transform: capitalize;
+}

@@ -1,0 +1,136 @@
+<!-- Demo -->
+<nav class="navbar" role="navigation">
+	<!-- Collect the nav links, forms, and other content for toggling -->
+  	<div class="navbar-main-container">
+	    <ul class="nav navbar-nav navbar-main" id="main-nav">
+	    	<li>
+	    		<a [ngClass]="{ 'active': step === 1 }"><span>Log In<br/><small *ngIf="loggedInUser">{{loggedInUser.email}}</small><small *ngIf="!loggedInUser">Login / Register</small></span>
+	    		</a>
+	    	</li>
+	    	<li>
+	    		<a [ngClass]="{ 'active': step === 2 }"><span>Education Detail<br/><small>Add your center detail</small></span>
+	    		</a>
+	    	</li>
+	    	<li>
+	    		<a [ngClass]="{ 'active': step === 3 }"><span>Confirmation<br/><small>Want to save your data ?</small></span></a>
+	    	</li>
+	    </ul>
+	</div>
+</nav>
+
+<div class="container footer-margin">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+    	<div>
+    		<div *ngIf="step === 1" class="common-form">
+    			<h1>Log In / Sign UP</h1>
+    			<hr>
+				<center><strong>You have to login for add any new detail</strong></center>
+				<div class="main-content">
+					<div *ngIf="loggedInUser">
+						<p>{{loggedInUser.email}}</p>
+						<button class="common-btn" (click)="goToNextStep()">Continue</button>
+					</div>
+					<div *ngIf="!loggedInUser">
+						<!-- Trigger the login modal with a button -->
+	                    <center>
+	                    	<button type="button" class="common-btn" data-toggle="modal" data-target="#loginModal">LOGIN</button>
+	                    </center>
+					</div>
+				</div>
+    		</div>
+    		<div *ngIf="step === 2" class="common-form">
+    			<h1>Add Education Detail</h1>
+				<center>
+					<strong>Your education center will be view by the user</strong>
+					<p><small>Note: Currenly we are not supporting photo upload. You have to provide Photo URL</small></p>
+				</center>
+				<div class="main-content">
+					<div class="row">
+						<div class="col-md-offset-2 col-md-8">
+							<form role="form" [ngFormModel]="addEducationCenterForm" (ngSubmit)="saveEducationCenter(addEducationCenterForm.value)">
+								<div class="form-group">
+									<select class="common-input" [(ngModel)]="selectedCity">
+			                            <option *ngFor="let city of allCities" [value]="city">{{city}}
+			                            </option>
+			                        </select>
+								</div>
+							    <div class="form-group">
+							    	<select class="common-input" [ngModel]="selectedEducationType" (ngModelChange)="onEducationTypeChange($event)">
+			                            <option class="capitalize" *ngFor="let education_type of allEducationsType" [value]="education_type">{{education_type}}
+			                            </option>
+			                        </select>
+							    </div>
+							    <div class="form-group">
+							    	<select class="common-input" [(ngModel)]="selectDegreeOrClass">
+			                            <option class="capitalize" *ngFor="let data of allDegreeOrClass" [value]="data">{{data}}
+			                            </option>
+			                        </select>
+							    </div>
+							    <div class="form-group">
+							      <input type="text" class="common-input" id="name" placeholder="Name of the Center *" [ngFormControl]="addEducationCenterForm.controls['name']">
+							    </div>
+							    <div class="form-group">
+							      <textarea rows="3" class="common-input" id="desc" placeholder="Add Description *" [ngFormControl]="addEducationCenterForm.controls['desc']"></textarea>
+							    </div>
+							    <div class="form-group">
+							      <input type="text" class="common-input" id="fees_detail" placeholder="Fees Details *" [ngFormControl]="addEducationCenterForm.controls['fees_detail']">
+							    </div>
+							    <div class="form-group">
+							      <input type="text" class="common-input" id="contact_no" placeholder="Contact No *" [ngFormControl]="addEducationCenterForm.controls['contact_no']">
+							    </div>
+							    <div class="form-group">
+							      <input type="text" class="common-input" id="img_url" placeholder="Image URL" [ngFormControl]="addEducationCenterForm.controls['img_url']">
+							    </div>
+							    <div class="row">
+							    	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							    		<input class="button common-btn-small" type="button" (click)="goToBack()" value="BACK" />
+							    	</div>
+							    	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							    		<button type="submit" [disabled]="!addEducationCenterForm.valid" class="common-btn">SAVE AND CONTINUE</button>
+							    	</div>
+							    </div>
+							    <p>
+							    	<small id="error-msg">{{errorMessage}}</small>
+							    </p>
+							</form>
+						</div>
+					</div>
+				</div>
+    		</div>
+    		<div *ngIf="step === 3" class="common-form">
+    			<h1>Confirm your data</h1>
+				<center><strong>Confirm your given detail</strong></center>
+				<div class="row confirm-tab-padding">
+			    	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			    		<input class="button common-btn-small" type="button" (click)="goToBack()" value="BACK" />
+			    	</div>
+			    	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			    		<button class="common-btn" [disabled]="saving" (click)="confirmSave(openCompletedModal)">Save your education center</button>
+			    	</div>
+			    </div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div> <!-- /container -->  
+
+<a href="" #openCompletedModal data-toggle="modal" data-target="#completedModal"></a>
+<!-- Done Modal -->
+
+<div class="modal fade" id="completedModal" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><center>Thanks for adding your education place </center></h3>
+        </div>
+        <div class="modal-body search-modal">
+        	<center>
+        		<small> You can see your all education centers detail in your 'education center' in your profile </small>
+        		<button data-dismiss="modal" class="btn btn-lg btn-success" [routerLink]="['Home']">Redirect To main page</button>
+        	</center>
+        </div>
+      </div>
+    </div>
+</div>

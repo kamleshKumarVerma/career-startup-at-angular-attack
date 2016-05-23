@@ -1,0 +1,11 @@
+#---------------------------------
+# Directories
+#---------------------------------
+dist
+node_modules
+public
+tmp
+typings
+public
+.idea
+npm-debug.log

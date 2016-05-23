@@ -1,0 +1,298 @@
+/*!
+ * Start Bootstrap
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background:#fff url(../../assets/img/body.gif) repeat-x 0 0;
+    font-family: 'Sans-Serif', serif;
+    font-size: 15px;
+    color : #848484;
+    padding-top:50px
+}
+
+.loading {
+    background: url(../../assets/img/loading.gif) center no-repeat;
+    display: block; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.data-loading {
+    background: url(../../assets/img/data-loader.gif) center no-repeat;
+    display: block; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#error-msg {
+    color: red;
+}
+
+
+/* Overiding Bootstrap CSS with our custom Requirements */
+
+.common-btn {
+  width : 280px;
+    background-color: #FF8C00;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 14px 14px 14px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.common-btn:hover {
+  background: #FFA500
+}
+
+.common-btn-small {
+    width : 200px;
+    background-color: #FF8C00;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 14px 14px 14px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.common-btn-small:hover {
+  background: #FFA500
+}
+
+.logo-size {
+    width: 95px;
+    height: 53px;
+}
+
+.common-input {
+    width : 280px;
+    height:40px;
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 2px;
+    color: #333;
+    font-size:1.4rem;
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    transition:all 0.1s linear;
+    margin-bottom: 10px;
+}
+
+.common-list {
+    background: transparent;
+   
+    color : white;
+    width : 280px;
+    height:40px;
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 2px;
+    font-size:1.4rem;
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    transition:all 0.1s linear;
+    margin-bottom: 10px;
+}
+
+.common-list option{
+    color: black;
+}
+
+
+
+.common-input:focus { 
+    outline: none; 
+    border: 1px solid #7bc1f7; 
+    box-shadow: 0px 0px 8px #7bc1f7; 
+    -moz-box-shadow: 0px 0px 8px #7bc1f7; 
+    -webkit-box-shadow: 0px 0px 8px #7bc1f7; 
+}
+
+.social-icon {
+    width: 30px; 
+    height: 30px
+}
+
+.padding-zero {
+    padding: 0px 0px 0px 0px;
+}
+
+.footer-margin {
+    margin-bottom: 50px;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.transparent-input {
+    background: transparent;
+    color: white;
+    width : 280px;
+    height:40px;
+    outline: none;
+    border: 2px solid #ddd;
+    padding: 0 10px;
+    border-radius: 2px;
+    font-size: 17px;
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    transition:all 0.1s linear;
+    margin-bottom: 20px;
+}
+
+.transparent-input:focus { 
+    outline: none; 
+    border: 1px solid #7bc1f7; 
+    box-shadow: 0px 0px 8px #7bc1f7; 
+    -moz-box-shadow: 0px 0px 8px #7bc1f7; 
+    -webkit-box-shadow: 0px 0px 8px #7bc1f7; 
+}
+
+.lebel {
+    color: white;
+    float: left;
+}
+
+.color-white {
+    color: white;
+}
+
+
+.login-signup-modal {
+    background: #fff url('../../assets/img/login-bg.jpg') repeat-x 0 0;
+}
+
+.search-modal {
+    background: #fff url('../../assets/img/search.png') repeat-x 0 0;
+}
+
+.icon-email {
+    background: url('../../assets/img/glyphicons-envelope.png') no-repeat scroll 7px 10px;
+    padding-left:35px;
+}
+
+.icon-user {
+    background: url('../../assets/img/glyphicons-user.png') no-repeat scroll 7px 6px;
+    padding-left:35px;
+}
+
+.icon-password {
+    background: url('../../assets/img/glyphicons-lock.png') no-repeat scroll 7px 6px;
+    padding-left:35px;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+.img-size {
+    height: 200px;
+    width: 255px;
+}
+
+.common-form {
+  margin: 20px auto;
+  width: 100%px; 
+  text-align: center;
+  -webkit-border-radius: 8px/7px; 
+  -moz-border-radius: 8px/7px; 
+  border-radius: 8px/7px; 
+  background-color: #ebebeb; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: solid 1px #cbc9c9;
+}
+
+h1 {
+     font-size: 32px;
+     font-weight: 300;
+     text-align: center;
+     padding-top: 10px;
+     margin-bottom: 10px;
+}
+
+table { 
+     width: 100%;
+     text-align: left;
+     background-color: lemonchiffon;
+     border-collapse: collapse; 
+  }
+
+table th { 
+    background-color: goldenrod;
+    color: white; 
+  }
+table td, 
+table th { 
+     padding: 10px;
+ 
+}
+
+a {
+    cursor: pointer;
+}
+
+.common-btn-border {
+    width : 280px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    outline: none;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 14px 14px 14px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.common-input-textarea {
+    width: 100%;
+    height:80px;
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 2px;
+    color: #333;
+    font-size:1.4rem;
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    transition:all 0.1s linear;
+    margin-bottom: 10px;
+}
+
+.common-input-textarea:focus{ 
+    outline: none; 
+    border: 1px solid #7bc1f7; 
+    box-shadow: 0px 0px 8px #7bc1f7; 
+    -moz-box-shadow: 0px 0px 8px #7bc1f7; 
+    -webkit-box-shadow: 0px 0px 8px #7bc1f7; 
+} 
+
+.review-star {
+    width: 120px;
+    height: 25px;
+}

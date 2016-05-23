@@ -1,0 +1,143 @@
+
+.footer{
+	background-color: #222;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	padding: 5px 100px 5px 100px;
+	opacity : 0.6;
+	position:fixed;
+    left:0px;
+    bottom:0px;
+}
+
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer .footer-left{
+	width: 25%;
+}
+
+/* The company logo */
+
+.footer h3{
+	color:  #ffffff;
+	margin: 0;
+}
+
+.footer h3 span{
+	color:  #5383d3;
+}
+
+.footer .footer-company-name{
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer .footer-center{
+	width: 40%;
+}
+
+.footer .footer-center i{
+		
+	color: #ffffff;
+	font-size: 20px;
+	border-radius: 50%;
+	text-align: left;
+	margin: 0px 5px;
+	vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope{
+	font-size: 17px;
+
+}
+
+.footer .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer .footer-right{
+	width: 30%;
+}
+
+.footer .footer-company-about{
+	line-height: 20px;
+	color:  #ffffff;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.footer .footer-icons{
+	
+}
+
+.footer .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	margin-right: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+	.footer .footer-left,
+	.footer .footer-center,
+	.footer .footer-right{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	.footer .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+.margin-buttom {
+	margin-bottom: 50px;
+}
+

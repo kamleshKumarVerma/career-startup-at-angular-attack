@@ -1,0 +1,7 @@
+.education_img_url {
+	width: 30px;
+	height: 30px
+}
+
+table tr:hover{cursor:pointer;} /* For all tables*/
+table.sortable tr:hover{cursor:pointer;} /* only for this one*/

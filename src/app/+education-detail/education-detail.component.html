@@ -1,0 +1,103 @@
+<!-- Page Content -->
+<div *ngIf="!educationDetail" class="data-loading"></div>
+<div class="container">
+	<div *ngIf="educationDetail" class="row">
+	    <div class="col-md-offset-1 col-md-10">
+	        <div class="thumbnail education-data-detail">
+	            <div class="row">
+	                <div class="col-xm-12 col-sm-12 col-md-6 col-lg-6">
+	                    <img class="img-responsive" src="{{educationDetail.img_url}}">
+	                </div>
+	                <div class="col-xm-12 col-sm-12 col-md-6 col-lg-6">
+	                    <div class="caption-full">
+	                        <h3><label>{{educationDetail.name}}</label></h3>
+	                    </div>
+	                    <div class="ratings">
+	                        <p class="pull-right"> Reviews {{reviews.length}}</p>
+	                        <p>
+	                            <i class="fa fa-star" aria-hidden="true"></i>
+	                            <i class="fa fa-star" aria-hidden="true"></i>
+	                            <i class="fa fa-star" aria-hidden="true"></i>
+	                            <i class="fa fa-star" aria-hidden="true"></i>
+	                            <i class="fa fa-star" aria-hidden="true"></i>
+	                            5.0 stars
+	                        </p>
+	                    </div>
+	                    <div class="education-data-desc">
+	                        {{educationDetail.desc}}
+	                    </div>
+	                    <div class="education-data-desc">
+	                        <i class="fa fa-map-marker"></i>  {{educationDetail.city}}
+	                    </div>
+	                    <div class="education-data-desc">
+	                        <i class="fa fa-clock-o"></i> {{educationDetail.class_or_degree}}
+	                    </div>
+	                    <div class="education-data-desc">
+	                        <i class="fa fa-money"></i> {{educationDetail.fees_detail}}
+	                    </div>
+	                    <div class="education-data-contact-number">
+	                        <i class="fa fa-phone"></i> Phone No. {{educationDetail.contact_no}}
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+
+	<div class="row" *ngIf="educationDetail">
+		<div class="col-md-offset-1 col-md-10">
+			<div class="panel panel-default">
+			    <div class="panel-body">
+
+			        <button type="button" class="common-btn-border" type="button" data-toggle="collapse" data-target="#review" aria-expanded="false" aria-controls="review" (click)="goingToWriteReview()">Want to write review</button>
+				    <div id="review" class="collapse">
+				       <br>
+				       <div class="review_steup">
+				       		<form role="form" [ngFormModel]="reviewForm" (ngSubmit)="postReview(reviewForm.value)">
+				       			<div class="form-group">
+					               <label for="InputMessage">Comments: </label>
+					               <div class="input-group padding-style">
+					                   <textarea [ngFormControl]="reviewForm.controls['comment']" name="InputMessage" id="InputMessage" class="common-input-textarea" rows="2" cols="150" required>
+					                   </textarea>
+					                </div>
+					           </div>
+					           <center><p><small id="error-msg">{{errorMessage}}</small></p></center>
+					           <button type="submit" [disabled]="!reviewForm.valid" class="common-btn" data-toggle="collapse" data-target="#review">POST YOUR COMMENT</button>
+				               <button type="button" class="common-btn" data-toggle="collapse" data-target="#review">CANCEL</button>
+				       		</form>
+				       </div>
+				    </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" *ngIf="reviews.length > 0">
+		<div class="col-md-offset-1 col-md-10">
+			<div class="panel panel-default">
+			    <div class="panel-body alert alert-warning">
+			        <div *ngFor="let review of reviews" class="row review-style">
+			        	<div class="col-md-12 alert">
+			        		<p class="pull-right">{{review.date | date}}</p>
+			        		<p class="pull-left">
+			        			<i class="fa fa-user" aria-hidden="true"></i>
+			        			{{review.postedby}}
+			        		</p>
+			        		<div class="row">
+			        			<div class="col-md-12">
+			        				<p class="review-comment">
+			        					{{review.comment}}
+			        				</p>
+			        			</div>
+			        		</div>
+			        	</div>
+			        	<hr>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
